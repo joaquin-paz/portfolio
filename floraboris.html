@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Webhook Tutorial</title>
+  </head>
+  <body>
+    <textarea id="userMessage" placeholder="Enter your message here" rows="4" cols="50"></textarea>
+    <br>
+    <button onclick="sendMessage()">Send</button>
+  </body>
+
+  <script>
+    function sendMessage() {
+      var userMessage = document.getElementById("userMessage").value;
+      if (!userMessage) {
+        alert("Please enter a message.");
+        return;
+      }
+
+      // Get the current date and time in the desired format
+      var now = new Date();
+      var year = now.getFullYear();
+      var month = String(now.getMonth() + 1).padStart(2, '0');
+      var day = String(now.getDate()).padStart(2, '0');
+      var hours = String(now.getHours()).padStart(2, '0');
+      var minutes = String(now.getMinutes()).padStart(2, '0');
+      var formattedDateTime = `(${year}-${month}-${day} at ${hours}:${minutes})`;
+
+      // Combine date/time with the user message
+      var fullMessage = `────────────────────────────────────\n**${formattedDateTime}**\n──────────────────\n${userMessage}`;
+
+      var request = new XMLHttpRequest();
+      request.open("POST", "https://discord.com/api/webhooks/1301013749863550996/xbNIm50KZgPvYNZKmbuZ01ON6mNJwRGl1kYJPNMjwCPGLddXK5CMZvte1JUpN-vklV7R");
+
+      request.setRequestHeader('Content-type', 'application/json');
+
+      var params = {
+        username: "Flora Boris",
+        avatar_url: "https://img.freepik.com/free-vector/gift-postcard-with-cartoon-animals-chicken-scarf-headphones_71599-86.jpg?size=338&ext=jpg",
+        content: fullMessage
+      }
+
+      request.send(JSON.stringify(params));
+    }
+  </script>
+</html>
