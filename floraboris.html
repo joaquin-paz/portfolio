@@ -43,6 +43,8 @@
         content: fullMessage
       }
       request.send(JSON.stringify(params));
+
+      document.getElementById("userMessage").value = "";
     }
   </script>
 </html>
