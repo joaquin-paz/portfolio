@@ -4834,3 +4834,12 @@ input, select, textarea {
         border-radius: 20px;
         font-size: 12px;
     }
+
+    .video-max-width {
+        max-width: 500px; /* Set maximum width in pixels */
+        width: 100%; /* Ensures responsiveness */
+        height: auto; /* Maintains aspect ratio */
+        display: block; /* Prevents inline issues */
+        margin: 0 auto; /* Centers the video if needed */
+        border-radius: 5px; /* Optional: Adds rounded corners */
+    }
