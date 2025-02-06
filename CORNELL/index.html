@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FYSH Links</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="icon" href="assets/img/fysh.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="assets/img/fysh.png">
+  <meta name="description" content="Shortcuts">
+  <meta name="author" content="Fysh">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+<!-- Switch Port -->
+<div class="device-notification">
+  <a class="device-notification--logo" href="ref.html">
+    <img src="assets/img/logo.png" alt="Fysh" height="30">
+    <p>Fysh</p>
+  </a>
+  <p class="device-notification--message">Switch to portrait or find a larger screen for proper use. Thank you.</p>
+</div>
+
+<!-- Main -->
+<div class="perspective effect-rotate-left">
+    <ul class="outer-nav">
+        <li class="is-active">Home</li>
+        <li>ProdDev</li>
+        <li>Ergo</li>
+        <li>FSAE</li>
+        <li>Nav</li>
+    </ul>
+
+  <div class="container"><div class="outer-nav--return"></div>
+    <div id="viewport" class="l-viewport">
+      <div class="l-wrapper">
+        <header class="header">
+          <a class="header--logo" href="ref.html">
+            <img src="assets/img/logo.png" alt="FYSH" height="40">
+            <p>FYSH</p>
+          </a>
+          <button class="header--cta cta">Nav</button>
+          <div class="header--nav-toggle">
+            <span></span>
+          </div>
+        </header>
+        <nav class="l-side-nav">
+          <ul class="side-nav">
+            <li class="is-active"><span>Home</span></li>
+            <li><span>ProdDev</span></li>
+            <li><span>Ergo</span></li>
+            <li><span>1690</span></li>
+            <li><span>Nav</span></li>
+          </ul>
+        </nav>
+        <ul class="l-main-content main-content">
+
+        <!-- Main Articles -->
+          <li class="l-section section section--is-active">
+            <div class="intro">
+              <div class="intro--banner">
+                <img src="assets/img/Skyline_Render.jpg" alt="Welcome" width="679">
+                <h1>Link Hub</h1>
+
+                <button class="cta2">ProdDev
+                  <span class="btn-background"></span>
+                </button>
+
+                <button class="cta3">Ergo
+                    <span class="btn-background"></span>
+                </button>
+
+                <button class="cta4">1690
+                    <span class="btn-background"></span>
+                </button>
+
+                <button class="cta5">Nav
+                    <span class="btn-background"></span>
+                </button>
+
+
+              </div>
+
+
+              <div class="intro--options">
+                <a href="http://studentcenter.cornell.edu/">SC</a>
+                <a href="https://canvas.cornell.edu/courses/74156">5630</a>
+                <a href="https://drive.google.com/drive/folders/177hRy5z72-DlB6sVYHi1Z5L40T5UCEuy?usp=sharing">5630-G</a>
+                <a href="https://canvas.cornell.edu/courses/73977/files">6700</a>
+                <a href="https://drive.google.com/drive/folders/1hpiNJgSk9WqdqV40DfdAbfzAkRObeq5s?usp=drive_link">1690</a>
+              </div>
+
+            </div>
+          </li>
+
+
+          <!-- Prod -->
+          <li class="l-section section">
+              <div class="about">
+                <div class="about--banner">
+
+
+                    <h1>Product Design</h1>
+                    <a href="https://monstermash.zone/">
+                      <button>Model Try</button>
+                    </a>
+
+                </div>
+              </div>
+          </li>
+
+          <!-- Ergo -->
+          <li class="l-section section">
+              <div class="about">
+                <div class="about--banner">
+
+
+                    <h1>Ergonomic Methods</h1>
+                    <a href="https://monstermash.zone/">
+                      <button>Model Try</button>
+                    </a>
+
+                </div>
+              </div>
+          </li>
+
+          <!-- 1690 -->
+          <li class="l-section section">
+              <div class="about">
+                <div class="about--banner">
+
+
+                    <h1>Cross Country Skiing</h1>
+                    <a href="https://monstermash.zone/">
+                      <button>Model Try</button>
+                    </a>
+
+                </div>
+              </div>
+          </li>
+
+          <!-- Nav -->
+          <li class="l-section section">
+            <div class="about">
+              <div class="about--banner">
+
+                <a href="https://docs.google.com/spreadsheets/d/1FmOXR6D-jeyJmyBriq8Hzz1BQ5pjE82IgwO-I1mIsw8/edit?gid=2058464649#gid=2058464649">
+                  <button>FSAE</button>
+                </a>
+
+                <a href="https://docs.google.com/spreadsheets/d/1M-2KCjR5bS-uW9mo3rU9ALXMwyMd_j685Vg3kZSfSZM/edit?usp=sharing">
+                  <button>Charge</button>
+                </a>
+
+                <a href="https://joaquin-paz.github.io/portfolio/">
+                  <button>Portfolio</button>
+                </a>
+
+
+              </div>
+            </div>
+          </li>
+
+
+
+
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
+<script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
+<script src="assets/js/functions-min.js"></script>
+
+<script>
+  function sendMessage(m_ID, webhookURL) {
+    var userMessage = document.getElementById(m_ID).value;
+    if (!userMessage) {
+      alert("Y u no write anything? Violators must be punished.");
+      window.open("ricky.html", "_blank");
+      return;
+    }
+
+    // So time Very date
+    var now = new Date();
+    var year = now.getFullYear();
+    var month = String(now.getMonth() + 1).padStart(2, '0');
+    var day = String(now.getDate()).padStart(2, '0');
+    var hours = String(now.getHours()).padStart(2, '0');
+    var minutes = String(now.getMinutes()).padStart(2, '0');
+    var formattedDateTime = `(${year}-${month}-${day} at ${hours}:${minutes})`;
+
+    // Con a cat a nation
+    var fullMessage = `────────────────────────────────────\n**${formattedDateTime}**\n──────────────────\n${userMessage}`;
+
+    var request = new XMLHttpRequest();
+    request.open("POST", webhookURL);
+
+    request.setRequestHeader('Content-type', 'application/json');
+
+    var params = {
+      content: fullMessage
+    }
+    request.send(JSON.stringify(params));
+
+    document.getElementById(m_ID).value = "";
+  }
+</script>
+
+<script>
+  function sendMessageDL(m_ID,webhookURL) {
+    var userMessage = document.getElementById(m_ID).value;
+    if (!userMessage) {
+      alert("Y u no write anything? Violators must be punished.");
+      window.open("ricky.html", "_blank");
+      return;
+    }
+
+    var request = new XMLHttpRequest();
+    request.open("POST", webhookURL);
+
+    request.setRequestHeader('Content-type', 'application/json');
+
+    var fullMessage = `dl ${userMessage}`;
+
+    var params = {
+      username: "Yarr",
+      avatar_url: "",
+      content: fullMessage
+    }
+    request.send(JSON.stringify(params));
+
+    document.getElementById(m_ID).value = "";
+  }
+</script>
+
+<script>
+  const apiKey = 'AIzaSyDMIWJiZiB8tc-WBZNEGVRVaRk7OJOE-Bc';
+  const maxResults = 1;
+
+  async function fetchLatestVideo(channelId, container) {
+      const url = `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&order=date&maxResults=${maxResults}&hl=fr`;
+
+      try {
+          const response = await fetch(url);
+          const data = await response.json();
+
+          if (data.items && data.items.length > 0) {
+              const videoId = data.items[0].id.videoId;
+              const embedHtml = `
+                  <iframe width="280" height="156"
+                          src="https://www.youtube.com/embed/${videoId}?controls=1&modestbranding=1&rel=0"
+                          title="YouTube video player" frameborder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                          allowfullscreen>
+                  </iframe>`;
+              container.innerHTML = embedHtml;
+
+          } else {
+              container.innerHTML = 'Panik.';
+          }
+      } catch (error) {
+          console.error('Error fetching video:', error);
+          container.innerHTML = 'Error loading video.';
+      }
+  }
+
+  // Get all video containers
+  const videoContainers = document.querySelectorAll('.video-container');
+
+  videoContainers.forEach(container => {
+      const channelId = container.dataset.channelId;
+      fetchLatestVideo(channelId, container);
+  });
+
+  </script>
+
+
+  <script>
+      async function sendToWebhook(m_ID, webhookURL) {
+          const form = document.getElementById(m_ID);
+          if (!form) {
+              alert("Form not found");
+              return;
+          }
+
+          const message = form.querySelector("#message").value; // Get the message from the textarea
+          const fileInput = form.querySelector("#file"); // Get the file input from the form
+          const formData = new FormData();
+
+          if (message) {
+              formData.append("content", message); // Add the message to the form data
+          }
+
+          if (fileInput && fileInput.files.length > 0) {
+              formData.append("file", fileInput.files[0]); // Add the file to the form data
+          }
+
+          try {
+              const response = await fetch(webhookURL, {
+                  method: "POST",
+                  body: formData
+              });
+
+              if (response.ok) {
+                  alert("Message and file sent successfully!");
+              } else {
+                  const error = await response.text();
+                  console.error("Error response:", error);
+                  alert("Failed to send message: " + response.status);
+              }
+          } catch (error) {
+              console.error("Error sending to webhook:", error);
+              alert("An error occurred. Check the console for details.");
+          }
+      }
+  </script>
+
+
+
+
+</body>
+</html>
