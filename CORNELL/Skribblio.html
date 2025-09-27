@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FYSH HOME</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="icon" href="assets/img/fysh.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="assets/img/fysh.png">
+  <meta name="description" content="HUB">
+  <meta name="author" content="Fysh">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+<!-- Main -->
+<div class="perspective effect-rotate-left">
+    <ul class="outer-nav">
+        <li class="is-active">Contact Us</li>
+    </ul>
+
+  <div class="container"><div class="outer-nav--return"></div>
+    <div id="viewport" class="l-viewport">
+      <div class="l-wrapper">
+        <header class="header">
+          <a class="header--logo" href="ref.html">
+            <img src="assets/img/logo.png" alt="FYSH" height="40">
+            <p>FYSH</p>
+          </a>
+          <button class="header--cta cta">Nav</button>
+          <div class="header--nav-toggle">
+            <span></span>
+          </div>
+        </header>
+        <nav class="l-side-nav">
+          <ul class="side-nav">
+            <li class="is-active"><span>Home</span></li>
+          </ul>
+        </nav>
+        <ul class="l-main-content main-content">
+
+        <!-- Main Articles -->
+          <li class="l-section section section--is-active">
+            <div class="intro">
+              <div class="intro--banner">
+                  <img src="assets/img/Skyline_Render.jpg" alt="Welcome" width="679">
+
+                  <h1>Skribblio With Strangers 09-28 @ 7:00PM </h1>
+
+                <textarea id="skws" placeholder="Please write your name and a way to contact you and location will be sent to you!" rows="4" cols="40"></textarea>
+
+                <button onclick="sendMessage('skws','https://discord.com/api/webhooks/1421633794947022980/Svfuv9NwpQAkBv3m6zXba8OWKdA4TxN9b6OvykTmNAxzbCQ5YO822kwQ_DkLHVXT7sU6')">Send Message <span class="btn-background"></span></button>
+
+              </div>
+            </div>
+          </li>
+
+
+
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
+<script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
+<script src="assets/js/functions-min.js"></script>
+
+<script>
+  function sendMessage(m_ID, webhookURL) {
+    var userMessage = document.getElementById(m_ID).value;
+    if (!userMessage) {
+      alert("BLANK MESSAGE DETECTED. Please enter a message before sending.");
+      window.open("ricky.html", "_blank");
+      return;
+    }
+
+    // So time Very date
+    var now = new Date();
+    var year = now.getFullYear();
+    var month = String(now.getMonth() + 1).padStart(2, '0');
+    var day = String(now.getDate()).padStart(2, '0');
+    var hours = String(now.getHours()).padStart(2, '0');
+    var minutes = String(now.getMinutes()).padStart(2, '0');
+    var formattedDateTime = `(${year}-${month}-${day} at ${hours}:${minutes})`;
+
+    // Con a cat a nation
+    var fullMessage = `────────────────────────────────────\n**${formattedDateTime}**\n──────────────────\n${userMessage}`;
+
+    var request = new XMLHttpRequest();
+    request.open("POST", webhookURL);
+
+    request.setRequestHeader('Content-type', 'application/json');
+
+    var params = {
+      content: fullMessage
+    }
+    request.send(JSON.stringify(params));
+
+    document.getElementById(m_ID).value = "";
+  }
+</script>
+
+
+  <script>
+      async function sendToWebhook(m_ID, webhookURL) {
+          const form = document.getElementById(m_ID);
+          if (!form) {
+              alert("Form not found");
+              return;
+          }
+
+          const message = form.querySelector("#message").value; // Get the message from the textarea
+          const fileInput = form.querySelector("#file"); // Get the file input from the form
+          const formData = new FormData();
+
+          if (message) {
+              formData.append("content", message); // Add the message to the form data
+          }
+
+          if (fileInput && fileInput.files.length > 0) {
+              formData.append("file", fileInput.files[0]); // Add the file to the form data
+          }
+
+          try {
+              const response = await fetch(webhookURL, {
+                  method: "POST",
+                  body: formData
+              });
+
+              if (response.ok) {
+                  alert("Message and file sent successfully!");
+              } else {
+                  const error = await response.text();
+                  console.error("Error response:", error);
+                  alert("Failed to send message: " + response.status);
+              }
+          } catch (error) {
+              console.error("Error sending to webhook:", error);
+              alert("An error occurred. Check the console for details.");
+          }
+      }
+  </script>
+
+
+</body>
+</html>
